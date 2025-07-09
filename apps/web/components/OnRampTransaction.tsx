@@ -19,17 +19,20 @@ export const OnRampTransactions = ({
     }
     return <Card title="Recent Transactions">
         <div className="pt-2">
-            {transactions.map(t => <div key={t.time.toDateString()} className="flex justify-between">
+            {transactions.map(t => <div key={Math.random()} className="flex justify-between">
                 <div>
                     <div className="text-sm">
-                        {t.status === 'Success' ? "Received INR" : "Transaction Failed"}
+                        {t.status === 'Success' && "Received INR"}
+                        {t.status === 'Failure' && "Failed Transaction"}
+                        {t.status === 'Processing' && "Processing Transaction"}
+
                     </div>
                     <div className="text-slate-600 text-xs">
                         {t.time.toDateString()}
                     </div>
                 </div>
                 <div className="flex flex-col justify-center">
-                    {t.status === 'Success' ? "+" : "!"} Rs {t.amount / 100}
+                    {t.status === 'Success' && "+"} Rs {t.amount / 100}
                 </div>
 
             </div>)}
