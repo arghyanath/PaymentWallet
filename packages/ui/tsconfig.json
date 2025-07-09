@@ -3,6 +3,12 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src",
+    "../../apps/web/components/sidebarItem.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
